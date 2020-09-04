@@ -7,6 +7,7 @@ public class manager : MonoBehaviour {
 	bool gameHasEnd = false;
 	public float restartDelay = 1f;
 	public GameObject completeLevelUI;
+	public GameObject BackToMenuUI;
 
 	public void CompleteLevel()
 	{
@@ -20,6 +21,11 @@ public class manager : MonoBehaviour {
 			Debug.Log ("GAME OVER");
 			Invoke ("Restart", restartDelay);
 		}
+	}
+	
+	public void Pause()
+	{
+		BackToMenuUI.SetActive(true);
 	}
 
 	void Restart(){
